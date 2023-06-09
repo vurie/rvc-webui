@@ -15,11 +15,17 @@ os.listdir = listdir4mac
 def webui():
     app = ui.create_ui()
     app.queue(64)
+#    app, local_url, share_url = app.launch(
+#        server_name=cmd_opts.opts.host,
+#        server_port=cmd_opts.opts.port,
+#        share=cmd_opts.opts.share,
+#    )
     app, local_url, share_url = app.launch(
-        server_name=cmd_opts.opts.host,
+        server_name='0.0.0.0',
         server_port=cmd_opts.opts.port,
         share=cmd_opts.opts.share,
     )
+    
 
 
 if __name__ == "__main__":
